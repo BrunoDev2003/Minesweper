@@ -21,21 +21,25 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-public class initScreen implements ActionListener, MouseListener{
+public class initScreen extends JFrame implements ActionListener, MouseListener{
     public initScreen(){
             JPanel jp = new JPanel(new GridLayout());
             jp.setLayout(new GridLayout(11, 11));
             JFrame screen = new JFrame("Welcome to the Minesweeper game! Developed by BrunoDev2003");
-            screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JMenuBar jmb = new JMenuBar();
             JMenu jm = new JMenu("Game");
             JMenuItem jmi = new JMenuItem("Item menu");
             jm.add(jmi);
+            setExtendedState(MAXIMIZED_BOTH);
+            setVisible(true);
+            screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 
 
 
     }
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
