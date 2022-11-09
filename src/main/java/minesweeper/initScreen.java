@@ -15,6 +15,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -22,14 +23,21 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class initScreen extends JFrame implements ActionListener, MouseListener{
-    public initScreen(){
+    private JDesktopPane jdp = new JDesktopPane();
+    private JMenuBar jmb = new JMenuBar();
+
+    public initScreen(String titulo){
+            setTitle(titulo);
+            getContentPane().add(jdp);
+            jdp.setBackground(Color.CYAN);
             JPanel jp = new JPanel(new GridLayout());
             jp.setLayout(new GridLayout(11, 11));
             JFrame screen = new JFrame("Welcome to the Minesweeper game! Developed by BrunoDev2003");
-            JMenuBar jmb = new JMenuBar();
-            JMenu jm = new JMenu("Game");
-            JMenuItem jmi = new JMenuItem("Item menu");
-            jm.add(jmi);
+            JMenu gameMenu = new JMenu ("Game Menu");
+            JMenu helpMenu = new JMenu ("Help");
+            jmb.add(gameMenu);
+            jmb.add(helpMenu);
+            setJMenuBar(jmb);
             setExtendedState(MAXIMIZED_BOTH);
             setVisible(true);
             screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

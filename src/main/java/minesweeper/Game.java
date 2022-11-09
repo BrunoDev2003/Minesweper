@@ -11,7 +11,7 @@ import minesweeper.initScreen;
 public class Game {
     public static void main( String[] args )
     {
-        initScreen initScreen = new initScreen();
+        initScreen initScreen = new initScreen("Minesweeper BrunoDev2003");
     }
 }
 
