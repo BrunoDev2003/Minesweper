@@ -26,6 +26,17 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
     private JDesktopPane jdp = new JDesktopPane();
     private JMenuBar jmb = new JMenuBar();
 
+            ImageIcon smileyImageIcon = null;
+            ImageIcon tImageIcon = null;
+            ImageIcon pitImageIcon = null;
+            ImageIcon lossImageIcon = null;
+            ImageIcon cryImageIcon = null;
+            ImageIcon oneImageIcon = null;
+            ImageIcon twoImageIcon = null;
+            ImageIcon threeImageIcon = null;
+            ImageIcon fourImageIcon = null;
+            ImageIcon fiveImageIcon = null;
+
     public initScreen(String titulo){
             setTitle(titulo);
             getContentPane().add(jdp);
@@ -33,7 +44,7 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
             JPanel jp = new JPanel(new GridLayout());
             jp.setLayout(new GridLayout(11, 11));
             JFrame screen = new JFrame("Welcome to the Minesweeper game! Developed by BrunoDev2003");
-            JMenu gameMenu = new JMenu ("Game Menu");
+            JMenu gameMenu = new JMenu ("Game");
             JMenu helpMenu = new JMenu ("Help");
             jmb.add(gameMenu);
             jmb.add(helpMenu);
@@ -48,6 +59,27 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
 
     }
 
+    public void loadMinesweeperImages() {
+            smileyImageIcon = getScaledImage("/img/smiley.png");
+            ImageIcon tImageIcon = null;
+            ImageIcon pitImageIcon = null;
+            ImageIcon lossImageIcon = null;
+            ImageIcon cryImageIcon = null;
+            ImageIcon oneImageIcon = null;
+            ImageIcon twoImageIcon = null;
+            ImageIcon threeImageIcon = null;
+            ImageIcon fourImageIcon = null;
+            ImageIcon fiveImageIcon = null;
+    }
+
+
+    private ImageIcon getScaledImage(String string) {
+        ImageIcon imageIcon = new ImageIcon(string);
+        Image img = imageIcon.getImage();
+        Image newimg = img.getScaledInstance( 30,30, java.awt.Image.SCALE_SMOOTH );
+        imageIcon = new ImageIcon(newimg);
+        return imageIcon;
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
