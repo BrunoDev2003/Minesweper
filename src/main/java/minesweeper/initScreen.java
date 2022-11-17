@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 public class initScreen extends JFrame implements ActionListener, MouseListener{
     private JDesktopPane jdp = new JDesktopPane();
     private JMenuBar jmb = new JMenuBar();
+    private JMenuItem jmiGame = new JMenuItem("About the game");
 
             ImageIcon smileyImageIcon = null;
             ImageIcon tImageIcon = null;
@@ -41,14 +42,14 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
             setTitle(titulo);
             getContentPane().add(jdp);
             jdp.setBackground(Color.CYAN);
-            JPanel jp = new JPanel(new GridLayout());
-            jp.setLayout(new GridLayout(11, 11));
             JFrame screen = new JFrame("Welcome to the Minesweeper game! Developed by BrunoDev2003");
             JMenu gameMenu = new JMenu ("Game");
             JMenu helpMenu = new JMenu ("Help");
+            addMenuItems(gameMenu, jmiGame);
+            setJMenuBar(jmb);
             jmb.add(gameMenu);
             jmb.add(helpMenu);
-            setJMenuBar(jmb);
+            loadMinesweeperImages();
             setExtendedState(MAXIMIZED_BOTH);
             setVisible(true);
             screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,17 +60,22 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
 
     }
 
+    private void addMenuItems(JMenu gameMenu, JMenuItem menuItem) {
+        gameMenu.add(menuItem);
+        menuItem.addActionListener(this);
+    }
+
     public void loadMinesweeperImages() {
-            smileyImageIcon = getScaledImage("/img/smiley.png");
-            ImageIcon tImageIcon = null;
-            ImageIcon pitImageIcon = null;
-            ImageIcon lossImageIcon = null;
-            ImageIcon cryImageIcon = null;
-            ImageIcon oneImageIcon = null;
-            ImageIcon twoImageIcon = null;
-            ImageIcon threeImageIcon = null;
-            ImageIcon fourImageIcon = null;
-            ImageIcon fiveImageIcon = null;
+            smileyImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\smiley.png");
+            tImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\t.png");
+            pitImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\pit.png");
+            lossImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\2.png");
+            cryImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\cry.png");
+            oneImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\1.png");
+            twoImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\2.png");
+            threeImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\3.png");
+            fourImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\4.png");
+            fiveImageIcon = getScaledImage("C:\\Users\\wwwbr\\minesweeper_game\\Minesweper\\src\\img\\5.png");
     }
 
 
