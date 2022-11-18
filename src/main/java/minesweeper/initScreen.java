@@ -25,7 +25,8 @@ import javax.swing.JPanel;
 public class initScreen extends JFrame implements ActionListener, MouseListener{
     private JDesktopPane jdp = new JDesktopPane();
     private JMenuBar jmb = new JMenuBar();
-    private JMenuItem jmiGame = new JMenuItem("About the game");
+    private JMenuItem jmiGame = new JMenuItem("Minesweeper");
+    private JMenuItem jmiAboutGame = new JMenuItem("About the game");
 
             ImageIcon smileyImageIcon = null;
             ImageIcon tImageIcon = null;
@@ -45,6 +46,7 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
             JFrame screen = new JFrame("Welcome to the Minesweeper game! Developed by BrunoDev2003");
             JMenu gameMenu = new JMenu ("Game");
             JMenu helpMenu = new JMenu ("Help");
+            addMenuItems(gameMenu, jmiAboutGame);
             addMenuItems(gameMenu, jmiGame);
             setJMenuBar(jmb);
             jmb.add(gameMenu);
@@ -87,6 +89,7 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
         return imageIcon;
     }
 
+
     @Override
     public void mouseClicked(MouseEvent e) {
         // TODO Auto-generated method stub
@@ -119,7 +122,13 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        if(e.getSource() == jmiAboutGame) {
+            InfoAboutGameScreen infoGameScreen = 
+                new InfoAboutGameScreen();
+        } else if (e.getSource() == jmiGame) {
+            GameScreen gameScreen = 
+                new GameScreen();
+        }
         
     }
 }
