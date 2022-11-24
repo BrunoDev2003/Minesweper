@@ -123,10 +123,10 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == jmiAboutGame) {
-            InfoAboutGameScreen infoGameScreen = 
+            InfoAboutGameScreen InfoAboutGameScreen = 
                 new InfoAboutGameScreen();
         } else if (e.getSource() == jmiGame) {
-            GameScreen gameScreen = 
+            GameScreen GameScreen = 
                 new GameScreen();
         }
         

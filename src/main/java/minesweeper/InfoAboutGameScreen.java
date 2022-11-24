@@ -28,8 +28,9 @@ import javax.swing.JTextField;
 public class InfoAboutGameScreen extends JPanel implements ActionListener{
     protected JTextField textField;
     protected JTextArea textArea;
+    private final static String newline = "\n";
     public void InfoScreen() {
-        textField = new JTextField(20);
+        textField = new JTextField( "Minesweeper", 20);
         textField.addActionListener(this);
 
         textArea = new JTextArea(5, 20);
@@ -37,7 +38,12 @@ public class InfoAboutGameScreen extends JPanel implements ActionListener{
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        String text = textField.getText();
+        text = "MINESWEEPER";
+        textArea.append(text + newline);
+        textField.selectAll();
+
+        textArea.setCaretPosition(textArea.getDocument().getLength());
         
     }
     
