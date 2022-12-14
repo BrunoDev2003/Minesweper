@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -25,25 +26,40 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 
-public class InfoAboutGameScreen extends JPanel implements ActionListener{
+public class InfoAboutGameScreen extends TelaMenu{
     protected JTextField textField;
     protected JTextArea textArea;
-    private final static String newline = "\n";
-    public void InfoScreen() {
-        textField = new JTextField( "Minesweeper", 20);
-        textField.addActionListener(this);
 
+
+    public InfoAboutGameScreen() {
+        super("Info About the Minesweeper");
+        InfoScreen();
+        pack();
+        setVisible(true);
+    }
+
+    public void InfoScreen() {
         textArea = new JTextArea(5, 20);
-        textArea.setEditable(false);
+        String textoLabel = "<html>vgbgbgb<body>";
+        JLabel jl = new JLabel(textoLabel);
+        painelComponentes.add(jl);
+        setVisible(true);
+    }
+
+    @Override
+    public boolean gameinfo() {
+        
+        return false;
     }
     @Override
-    public void actionPerformed(ActionEvent e) {
-        String text = textField.getText();
-        text = "MINESWEEPER";
-        textArea.append(text + newline);
-        textField.selectAll();
+    public boolean startgame() {
+        
+        return false;
+    }
 
-        textArea.setCaretPosition(textArea.getDocument().getLength());
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
         
     }
     

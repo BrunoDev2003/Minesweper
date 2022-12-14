@@ -26,7 +26,7 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
     private JDesktopPane jdp = new JDesktopPane();
     private JMenuBar jmb = new JMenuBar();
     private JMenuItem jmiGame = new JMenuItem("Minesweeper");
-    private JMenuItem jmiAboutGame = new JMenuItem("About the game");
+    private JMenuItem jmiAboutGame = new JMenuItem("About The Game");
 
             ImageIcon smileyImageIcon = null;
             ImageIcon tImageIcon = null;
@@ -121,13 +121,15 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == jmiAboutGame) {
-            InfoAboutGameScreen InfoAboutGameScreen = 
+    public void actionPerformed(ActionEvent ae) {
+        if(ae.getSource() == jmiAboutGame) {
+            InfoAboutGameScreen infoAboutGameScreen = 
                 new InfoAboutGameScreen();
-        } else if (e.getSource() == jmiGame) {
-            GameScreen GameScreen = 
+                jdp.add(infoAboutGameScreen);
+        } else if (ae.getSource() == jmiGame) {
+            GameScreen gameScreen = 
                 new GameScreen();
+               // jdp.add(gameScreen);
         }
         
     }

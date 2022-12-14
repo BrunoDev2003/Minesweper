@@ -30,12 +30,10 @@ import java.awt.GridLayout;
 public abstract class TelaMenu extends JInternalFrame implements ActionListener {
 
     protected final int PADRAO = 0;
-    protected final int ALTERANDO = 2;
-    protected final int EXCLUINDO = 3;
+    protected final int GAMEINFO = 2;
+    protected final int STARTGAME = 3;
     protected JPanel painelComponentes = new JPanel();
     private JPanel painelBotoes = new JPanel();
-    private JButton jbGameInfo = new JButton("Game Info");
-    private JButton jbStartGame = new JButton("StartGame");
     protected int estadoTela = PADRAO;
     private boolean temDadosNaTela = false;
     
@@ -49,17 +47,9 @@ public abstract class TelaMenu extends JInternalFrame implements ActionListener 
         painelBotoes.setLayout(
                 new GridLayout(1, 2));
         painelComponentes.setLayout(new GridBagLayout());
-        painelBotoes.add(jbGameInfo);
-        painelBotoes.add(jbStartGame);
-        jbGameInfo.addActionListener(this);
-        jbStartGame.addActionListener(this);
-        //habilitaBotoes();
     }
 
-    public void habilitaBotoes() {
-        jbGameInfo.setEnabled(estadoTela == PADRAO);
-        jbStartGame.setEnabled(estadoTela == PADRAO && temDadosNaTela);
-    }
+    abstract public boolean gameinfo();
 
-    //terminar o actionPerformed, para quando o botao dos jmi for clicado, a tela aparecer, linha 124
+    abstract public boolean startgame();
 }
