@@ -129,7 +129,7 @@ public class initScreen extends JFrame implements ActionListener, MouseListener{
         } else if (ae.getSource() == jmiGame) {
             GameScreen gameScreen = 
                 new GameScreen();
-               // jdp.add(gameScreen);
+                jdp.add(gameScreen);
         }
         
     }

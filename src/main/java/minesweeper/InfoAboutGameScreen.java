@@ -40,7 +40,7 @@ public class InfoAboutGameScreen extends TelaMenu{
 
     public void InfoScreen() {
         textArea = new JTextArea(5, 20);
-        String textoLabel = "<html>vgbgbgb<body>";
+        String textoLabel = "<html>Placeholder Information on MineSweeper<body>";
         JLabel jl = new JLabel(textoLabel);
         painelComponentes.add(jl);
         setVisible(true);
