@@ -35,7 +35,6 @@ public abstract class TelaMenu extends JInternalFrame implements ActionListener 
     protected JPanel painelComponentes = new JPanel();
     private JPanel painelBotoes = new JPanel();
     protected int estadoTela = PADRAO;
-    private boolean temDadosNaTela = false;
     
     public TelaMenu(String titulo) {
         super(titulo, true, true, true, true);
